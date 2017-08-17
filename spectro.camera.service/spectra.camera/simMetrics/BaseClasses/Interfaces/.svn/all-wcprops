@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/BaseClasses/Interfaces
+END
+ITokeniser.cs
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/BaseClasses/Interfaces/ITokeniser.cs
+END
+ISubstitutionCost.cs
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/BaseClasses/Interfaces/ISubstitutionCost.cs
+END
+ITermHandler.cs
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/BaseClasses/Interfaces/ITermHandler.cs
+END
+IAffineGapCost.cs
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/BaseClasses/Interfaces/IAffineGapCost.cs
+END
+IStringMetric.cs
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/BaseClasses/Interfaces/IStringMetric.cs
+END

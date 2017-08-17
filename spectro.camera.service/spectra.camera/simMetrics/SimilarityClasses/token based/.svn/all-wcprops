@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/SimilarityClasses/token%20based
+END
+DiceSimilarity.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/SimilarityClasses/token%20based/DiceSimilarity.cs
+END
+JaccardSimilarity.cs
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/SimilarityClasses/token%20based/JaccardSimilarity.cs
+END
+Token Based.png
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/SimilarityClasses/token%20based/Token%20Based.png
+END
+Token Based.gif
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/SimilarityClasses/token%20based/Token%20Based.gif
+END
+MongeElkan.cs
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/SimilarityClasses/token%20based/MongeElkan.cs
+END
+Token Based.wmf
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/SimilarityClasses/token%20based/Token%20Based.wmf
+END
+EuclideanDistance.cs
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/SimilarityClasses/token%20based/EuclideanDistance.cs
+END
+BlockDistance.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/SimilarityClasses/token%20based/BlockDistance.cs
+END
+CosineSimilarity.cs
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/SimilarityClasses/token%20based/CosineSimilarity.cs
+END
+OverlapCoefficient.cs
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/SimilarityClasses/token%20based/OverlapCoefficient.cs
+END
+Token Based.bmp
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/SimilarityClasses/token%20based/Token%20Based.bmp
+END
+MatchingCoefficient.cs
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/SimilarityClasses/token%20based/MatchingCoefficient.cs
+END
+Token Based.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/SimilarityClasses/token%20based/Token%20Based.jpg
+END

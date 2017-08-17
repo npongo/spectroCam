@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/BaseClasses/Abstract
+END
+AbstractAffineGapCost.cs
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/BaseClasses/Abstract/AbstractAffineGapCost.cs
+END
+AbstractTokeniserQGramN.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/BaseClasses/Abstract/AbstractTokeniserQGramN.cs
+END
+AbstractStringMetric.cs
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/BaseClasses/Abstract/AbstractStringMetric.cs
+END
+AbstractSubstitutionCost.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/npongoSourceCode/!svn/ver/488/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/BaseClasses/Abstract/AbstractSubstitutionCost.cs
+END

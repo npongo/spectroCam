@@ -1,0 +1,43 @@
+10
+
+dir
+518
+https://41.204.157.141:3690/svn/npongoSourceCode/Visual%20Studio%202008/SimMetrica1.5/SimMetricsv1.5/SimMetrics/SimilarityClasses
+https://41.204.157.141:3690/svn/npongoSourceCode
+
+
+
+2010-02-22T14:18:37.143801Z
+488
+Administrator
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10d153cf-34ec-194a-bd55-7dc1a82c8dce
+
+token based
+dir
+
+edit distance
+dir
+
+length based
+dir
+
+jaro and jaroWinkler
+dir
+
+QGram
+dir
+

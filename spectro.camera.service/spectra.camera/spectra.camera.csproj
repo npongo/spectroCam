@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{54787737-ECAE-4525-9CB4-B80A0EBDCAE2}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>spectra.camera</RootNamespace>
+    <AssemblyName>spectra.camera</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>spectra.camera_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BoolToColorConverter.cs" />
+    <Compile Include="Converters\BoolToTextConverter.cs" />
+    <Compile Include="Converters\DateToStringConverter.cs" />
+    <Compile Include="Converters\EmptyStringToNullConverter.cs" />
+    <Compile Include="Converters\EnumDescriptionConverter.cs" />
+    <Compile Include="Converters\enumToBoolConverter.cs" />
+    <Compile Include="Converters\NullToVisiblityConverter.cs" />
+    <Compile Include="Converters\PropertyDescriptionConverter.cs" />
+    <Compile Include="Converters\StringFormatConverter.cs" />
+    <Compile Include="Converters\BoolToImageConverter.cs" />
+    <Compile Include="Helpers\DropboxOAuth.cs" />
+    <Compile Include="Helpers\AnchoredZoomLinearAxes.cs" />
+    <Compile Include="Helpers\ButtonFocusBehavior.cs" />
+    <Compile Include="Helpers\ModelToCSV.cs" />
+    <Compile Include="Helpers\ObservableCollectionSort.cs" />
+    <Compile Include="Helpers\RelayCommand.cs" />
+    <Compile Include="Helpers\rtk_gps.cs" />
+    <Compile Include="Helpers\Spectrometer_C12666ma.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="Models\project.cs" />
+    <Compile Include="Models\Spectra.cs" />
+    <Compile Include="Models\SpectraContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="simMetrics\BaseClasses\Abstract\AbstractAffineGapCost.cs" />
+    <Compile Include="simMetrics\BaseClasses\Abstract\AbstractStringMetric.cs" />
+    <Compile Include="simMetrics\BaseClasses\Abstract\AbstractSubstitutionCost.cs" />
+    <Compile Include="simMetrics\BaseClasses\Abstract\AbstractTokeniserQGramN.cs" />
+    <Compile Include="simMetrics\BaseClasses\Interfaces\IAffineGapCost.cs" />
+    <Compile Include="simMetrics\BaseClasses\Interfaces\IStringMetric.cs" />
+    <Compile Include="simMetrics\BaseClasses\Interfaces\ISubstitutionCost.cs" />
+    <Compile Include="simMetrics\BaseClasses\Interfaces\ITermHandler.cs" />
+    <Compile Include="simMetrics\BaseClasses\Interfaces\ITokeniser.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\edit distance\Levenstein.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\edit distance\NeedlemanWunch.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\edit distance\SmithWaterman.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\edit distance\SmithWatermanGotoh.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\edit distance\SmithWatermanGotohWindowedAffine.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\Jaro.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\JaroWinkler.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\length based\ChapmanLengthDeviation.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\length based\ChapmanMeanLength.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\QGram\QGramsDistance.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\token based\BlockDistance.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\token based\CosineSimilarity.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\token based\DiceSimilarity.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\token based\EuclideanDistance.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\token based\JaccardSimilarity.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\token based\MatchingCoefficient.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\token based\MongeElkan.cs" />
+    <Compile Include="simMetrics\SimilarityClasses\token based\OverlapCoefficient.cs" />
+    <Compile Include="simMetrics\StringMetricFunctions.cs" />
+    <Compile Include="simMetrics\UtilityClasses\costfunctions\AffineGapRange1To0Multiplier1Over3.cs" />
+    <Compile Include="simMetrics\UtilityClasses\costfunctions\AffineGapRange5To0Multiplier1.cs" />
+    <Compile Include="simMetrics\UtilityClasses\costfunctions\SubCostRange0To1.cs" />
+    <Compile Include="simMetrics\UtilityClasses\costfunctions\SubCostRange1ToMinus2.cs" />
+    <Compile Include="simMetrics\UtilityClasses\costfunctions\SubCostRange5ToMinus3.cs" />
+    <Compile Include="simMetrics\UtilityClasses\MathFuncs.cs" />
+    <Compile Include="simMetrics\UtilityClasses\Tokenisers\TokeniserQGram2.cs" />
+    <Compile Include="simMetrics\UtilityClasses\Tokenisers\TokeniserQGram2Extended.cs" />
+    <Compile Include="simMetrics\UtilityClasses\Tokenisers\TokeniserQGram3.cs" />
+    <Compile Include="simMetrics\UtilityClasses\Tokenisers\TokeniserQGram3Extended.cs" />
+    <Compile Include="simMetrics\UtilityClasses\Tokenisers\TokeniserSGram2.cs" />
+    <Compile Include="simMetrics\UtilityClasses\Tokenisers\TokeniserSGram2Extended.cs" />
+    <Compile Include="simMetrics\UtilityClasses\Tokenisers\TokeniserSGram3.cs" />
+    <Compile Include="simMetrics\UtilityClasses\Tokenisers\TokeniserSGram3Extended.cs" />
+    <Compile Include="simMetrics\UtilityClasses\Tokenisers\TokeniserUtilities.cs" />
+    <Compile Include="simMetrics\UtilityClasses\Tokenisers\TokeniserWhitespace.cs" />
+    <Compile Include="simMetrics\UtilityClasses\Wordhandlers\DummyStopTermHandler.cs" />
+    <Compile Include="ViewModels\SettingsDialogViewModel.cs" />
+    <Compile Include="ViewModels\AboutDialogViewModel.cs" />
+    <Compile Include="ViewModels\InputDialogViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\ProjectGalleryViewModel.cs" />
+    <Compile Include="ViewModels\ProjectManagerViewModel.cs" />
+    <Compile Include="ViewModels\SpectrometerViewModel.cs" />
+    <Compile Include="Views\ProjectGallery.xaml.cs">
+      <DependentUpon>ProjectGallery.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="simMetrics\BaseClasses\.svn\all-wcprops" />
+    <None Include="simMetrics\BaseClasses\.svn\entries" />
+    <None Include="simMetrics\BaseClasses\Abstract\.svn\all-wcprops" />
+    <None Include="simMetrics\BaseClasses\Abstract\.svn\entries" />
+    <None Include="simMetrics\BaseClasses\Abstract\.svn\text-base\AbstractAffineGapCost.cs.svn-base" />
+    <None Include="simMetrics\BaseClasses\Abstract\.svn\text-base\AbstractStringMetric.cs.svn-base" />
+    <None Include="simMetrics\BaseClasses\Abstract\.svn\text-base\AbstractSubstitutionCost.cs.svn-base" />
+    <None Include="simMetrics\BaseClasses\Abstract\.svn\text-base\AbstractTokeniserQGramN.cs.svn-base" />
+    <None Include="simMetrics\BaseClasses\Interfaces\.svn\all-wcprops" />
+    <None Include="simMetrics\BaseClasses\Interfaces\.svn\entries" />
+    <None Include="simMetrics\BaseClasses\Interfaces\.svn\text-base\IAffineGapCost.cs.svn-base" />
+    <None Include="simMetrics\BaseClasses\Interfaces\.svn\text-base\IStringMetric.cs.svn-base" />
+    <None Include="simMetrics\BaseClasses\Interfaces\.svn\text-base\ISubstitutionCost.cs.svn-base" />
+    <None Include="simMetrics\BaseClasses\Interfaces\.svn\text-base\ITermHandler.cs.svn-base" />
+    <None Include="simMetrics\BaseClasses\Interfaces\.svn\text-base\ITokeniser.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\.svn\all-wcprops" />
+    <None Include="simMetrics\SimilarityClasses\.svn\entries" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\all-wcprops" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\entries" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\prop-base\Edit Distance.bmp.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\prop-base\Edit Distance.gif.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\prop-base\Edit Distance.jpg.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\prop-base\Edit Distance.png.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\prop-base\Edit Distance.wmf.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\text-base\Edit Distance.bmp.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\text-base\Edit Distance.gif.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\text-base\Edit Distance.jpg.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\text-base\Edit Distance.png.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\text-base\Edit Distance.wmf.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\text-base\Levenstein.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\text-base\NeedlemanWunch.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\text-base\SmithWaterman.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\text-base\SmithWatermanGotoh.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\edit distance\.svn\text-base\SmithWatermanGotohWindowedAffine.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\all-wcprops" />
+    <None Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\entries" />
+    <None Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\prop-base\Jaro and Jaro Winkler.bmp.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\prop-base\Jaro and Jaro Winkler.gif.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\prop-base\Jaro and Jaro Winkler.jpg.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\prop-base\Jaro and Jaro Winkler.png.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\prop-base\Jaro and Jaro Winkler.wmf.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\text-base\Jaro and Jaro Winkler.bmp.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\text-base\Jaro and Jaro Winkler.gif.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\text-base\Jaro and Jaro Winkler.jpg.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\text-base\Jaro and Jaro Winkler.png.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\text-base\Jaro and Jaro Winkler.wmf.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\text-base\Jaro.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\text-base\JaroWinkler.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\length based\.svn\all-wcprops" />
+    <None Include="simMetrics\SimilarityClasses\length based\.svn\entries" />
+    <None Include="simMetrics\SimilarityClasses\length based\.svn\prop-base\Length Based.bmp.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\length based\.svn\prop-base\Length Based.gif.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\length based\.svn\prop-base\Length Based.jpg.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\length based\.svn\prop-base\Length Based.png.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\length based\.svn\prop-base\Length Based.wmf.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\length based\.svn\text-base\ChapmanLengthDeviation.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\length based\.svn\text-base\ChapmanMeanLength.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\length based\.svn\text-base\Length Based.bmp.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\length based\.svn\text-base\Length Based.gif.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\length based\.svn\text-base\Length Based.jpg.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\length based\.svn\text-base\Length Based.png.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\length based\.svn\text-base\Length Based.wmf.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\QGram\.svn\all-wcprops" />
+    <None Include="simMetrics\SimilarityClasses\QGram\.svn\entries" />
+    <None Include="simMetrics\SimilarityClasses\QGram\.svn\prop-base\QGram.bmp.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\QGram\.svn\prop-base\QGram.gif.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\QGram\.svn\prop-base\QGram.jpg.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\QGram\.svn\prop-base\QGram.png.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\QGram\.svn\prop-base\QGram.wmf.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\QGram\.svn\text-base\QGram.bmp.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\QGram\.svn\text-base\QGram.gif.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\QGram\.svn\text-base\QGram.jpg.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\QGram\.svn\text-base\QGram.png.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\QGram\.svn\text-base\QGram.wmf.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\QGram\.svn\text-base\QGramsDistance.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\all-wcprops" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\entries" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\prop-base\Token Based.bmp.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\prop-base\Token Based.gif.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\prop-base\Token Based.jpg.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\prop-base\Token Based.png.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\prop-base\Token Based.wmf.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\text-base\BlockDistance.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\text-base\CosineSimilarity.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\text-base\DiceSimilarity.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\text-base\EuclideanDistance.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\text-base\JaccardSimilarity.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\text-base\MatchingCoefficient.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\text-base\MongeElkan.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\text-base\OverlapCoefficient.cs.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\text-base\Token Based.bmp.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\text-base\Token Based.gif.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\text-base\Token Based.jpg.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\text-base\Token Based.png.svn-base" />
+    <None Include="simMetrics\SimilarityClasses\token based\.svn\text-base\Token Based.wmf.svn-base" />
+    <None Include="simMetrics\UtilityClasses\.svn\all-wcprops" />
+    <None Include="simMetrics\UtilityClasses\.svn\entries" />
+    <None Include="simMetrics\UtilityClasses\.svn\text-base\MathFuncs.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\all-wcprops" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\entries" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\prop-base\AffineGapCost.bmp.svn-base" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\prop-base\AffineGapCost.gif.svn-base" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\prop-base\AffineGapCost.jpg.svn-base" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\prop-base\AffineGapCost.png.svn-base" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\prop-base\AffineGapCost.wmf.svn-base" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\text-base\AffineGapCost.bmp.svn-base" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\text-base\AffineGapCost.gif.svn-base" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\text-base\AffineGapCost.jpg.svn-base" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\text-base\AffineGapCost.png.svn-base" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\text-base\AffineGapCost.wmf.svn-base" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\text-base\AffineGapRange1To0Multiplier1Over3.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\text-base\AffineGapRange5To0Multiplier1.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\text-base\SubCostRange0To1.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\text-base\SubCostRange1ToMinus2.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\costfunctions\.svn\text-base\SubCostRange5ToMinus3.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\all-wcprops" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\entries" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\prop-base\Tokenisers.bmp.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\prop-base\Tokenisers.gif.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\prop-base\Tokenisers.jpg.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\prop-base\Tokenisers.png.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\prop-base\Tokenisers.wmf.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\text-base\TokeniserQGram2.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\text-base\TokeniserQGram2Extended.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\text-base\TokeniserQGram3.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\text-base\TokeniserQGram3Extended.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\text-base\Tokenisers.bmp.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\text-base\Tokenisers.gif.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\text-base\Tokenisers.jpg.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\text-base\Tokenisers.png.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\text-base\Tokenisers.wmf.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\text-base\TokeniserSGram2.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\text-base\TokeniserSGram2Extended.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\text-base\TokeniserSGram3.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\text-base\TokeniserSGram3Extended.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\text-base\TokeniserUtilities.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Tokenisers\.svn\text-base\TokeniserWhitespace.cs.svn-base" />
+    <None Include="simMetrics\UtilityClasses\Wordhandlers\.svn\all-wcprops" />
+    <None Include="simMetrics\UtilityClasses\Wordhandlers\.svn\entries" />
+    <None Include="simMetrics\UtilityClasses\Wordhandlers\.svn\text-base\DummyStopTermHandler.cs.svn-base" />
+    <None Include="spectra.camera_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\backup_32x32.png" />
+    <Content Include="Assets\backup_48x48.png" />
+    <Content Include="Assets\backup_64x64.png" />
+    <Content Include="Assets\bleConnected.png" />
+    <Content Include="Assets\bleConnected16.png" />
+    <Content Include="Assets\bleConnected24.png" />
+    <Content Include="Assets\bleDisconnected.png" />
+    <Content Include="Assets\bleDisconnected16.png" />
+    <Content Include="Assets\bleDisconnected24.png" />
+    <Content Include="Assets\Cloud_Sync_32x32.png" />
+    <Content Include="Assets\Cloud_Sync_48x48.png" />
+    <Content Include="Assets\Cloud_Sync_64x64.png" />
+    <Content Include="Assets\dropbox32x32.png" />
+    <Content Include="Assets\dropbox48x48.png" />
+    <Content Include="Assets\dropbox64x64.png" />
+    <Content Include="Assets\MetroUI-Apps-Bluetooth-icon.png" />
+    <Content Include="Assets\RecordOff_480.png" />
+    <Content Include="Assets\RecordOff_64.png" />
+    <Content Include="Assets\RecordOn_480.png" />
+    <Content Include="Assets\RecordOn_64.png" />
+    <Content Include="Assets\Record_480.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="simMetrics\SimilarityClasses\edit distance\Edit Distance.bmp" />
+    <Content Include="simMetrics\SimilarityClasses\edit distance\Edit Distance.gif" />
+    <Content Include="simMetrics\SimilarityClasses\edit distance\Edit Distance.jpg" />
+    <Content Include="simMetrics\SimilarityClasses\edit distance\Edit Distance.png" />
+    <Content Include="simMetrics\SimilarityClasses\edit distance\Edit Distance.wmf" />
+    <Content Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\Jaro and Jaro Winkler.bmp" />
+    <Content Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\Jaro and Jaro Winkler.gif" />
+    <Content Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\Jaro and Jaro Winkler.jpg" />
+    <Content Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\Jaro and Jaro Winkler.png" />
+    <Content Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\Jaro and Jaro Winkler.wmf" />
+    <Content Include="simMetrics\SimilarityClasses\length based\Length Based.bmp" />
+    <Content Include="simMetrics\SimilarityClasses\length based\Length Based.gif" />
+    <Content Include="simMetrics\SimilarityClasses\length based\Length Based.jpg" />
+    <Content Include="simMetrics\SimilarityClasses\length based\Length Based.png" />
+    <Content Include="simMetrics\SimilarityClasses\length based\Length Based.wmf" />
+    <Content Include="simMetrics\SimilarityClasses\QGram\QGram.bmp" />
+    <Content Include="simMetrics\SimilarityClasses\QGram\QGram.gif" />
+    <Content Include="simMetrics\SimilarityClasses\QGram\QGram.jpg" />
+    <Content Include="simMetrics\SimilarityClasses\QGram\QGram.png" />
+    <Content Include="simMetrics\SimilarityClasses\QGram\QGram.wmf" />
+    <Content Include="simMetrics\SimilarityClasses\token based\Token Based.bmp" />
+    <Content Include="simMetrics\SimilarityClasses\token based\Token Based.gif" />
+    <Content Include="simMetrics\SimilarityClasses\token based\Token Based.jpg" />
+    <Content Include="simMetrics\SimilarityClasses\token based\Token Based.png" />
+    <Content Include="simMetrics\SimilarityClasses\token based\Token Based.wmf" />
+    <Content Include="simMetrics\UtilityClasses\costfunctions\AffineGapCost.bmp" />
+    <Content Include="simMetrics\UtilityClasses\costfunctions\AffineGapCost.gif" />
+    <Content Include="simMetrics\UtilityClasses\costfunctions\AffineGapCost.jpg" />
+    <Content Include="simMetrics\UtilityClasses\costfunctions\AffineGapCost.png" />
+    <Content Include="simMetrics\UtilityClasses\costfunctions\AffineGapCost.wmf" />
+    <Content Include="simMetrics\UtilityClasses\Tokenisers\Tokenisers.bmp" />
+    <Content Include="simMetrics\UtilityClasses\Tokenisers\Tokenisers.gif" />
+    <Content Include="simMetrics\UtilityClasses\Tokenisers\Tokenisers.jpg" />
+    <Content Include="simMetrics\UtilityClasses\Tokenisers\Tokenisers.png" />
+    <Content Include="simMetrics\UtilityClasses\Tokenisers\Tokenisers.wmf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProjectGallery.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProjectManagerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SpectralView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.UniversalCRT.Debug, Version=10.0.14393.0">
+      <Name>Microsoft Universal CRT Debug Runtime</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
+      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.UWP.2015, Version=3.17.0">
+      <Name>SQLite for Universal Windows Platform</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="simMetrics\BaseClasses\.svn\prop-base\" />
+    <Folder Include="simMetrics\BaseClasses\.svn\props\" />
+    <Folder Include="simMetrics\BaseClasses\.svn\text-base\" />
+    <Folder Include="simMetrics\BaseClasses\.svn\tmp\prop-base\" />
+    <Folder Include="simMetrics\BaseClasses\.svn\tmp\props\" />
+    <Folder Include="simMetrics\BaseClasses\.svn\tmp\text-base\" />
+    <Folder Include="simMetrics\BaseClasses\Abstract\.svn\prop-base\" />
+    <Folder Include="simMetrics\BaseClasses\Abstract\.svn\props\" />
+    <Folder Include="simMetrics\BaseClasses\Abstract\.svn\tmp\prop-base\" />
+    <Folder Include="simMetrics\BaseClasses\Abstract\.svn\tmp\props\" />
+    <Folder Include="simMetrics\BaseClasses\Abstract\.svn\tmp\text-base\" />
+    <Folder Include="simMetrics\BaseClasses\Interfaces\.svn\prop-base\" />
+    <Folder Include="simMetrics\BaseClasses\Interfaces\.svn\props\" />
+    <Folder Include="simMetrics\BaseClasses\Interfaces\.svn\tmp\prop-base\" />
+    <Folder Include="simMetrics\BaseClasses\Interfaces\.svn\tmp\props\" />
+    <Folder Include="simMetrics\BaseClasses\Interfaces\.svn\tmp\text-base\" />
+    <Folder Include="simMetrics\SimilarityClasses\.svn\prop-base\" />
+    <Folder Include="simMetrics\SimilarityClasses\.svn\props\" />
+    <Folder Include="simMetrics\SimilarityClasses\.svn\text-base\" />
+    <Folder Include="simMetrics\SimilarityClasses\.svn\tmp\prop-base\" />
+    <Folder Include="simMetrics\SimilarityClasses\.svn\tmp\props\" />
+    <Folder Include="simMetrics\SimilarityClasses\.svn\tmp\text-base\" />
+    <Folder Include="simMetrics\SimilarityClasses\edit distance\.svn\props\" />
+    <Folder Include="simMetrics\SimilarityClasses\edit distance\.svn\tmp\prop-base\" />
+    <Folder Include="simMetrics\SimilarityClasses\edit distance\.svn\tmp\props\" />
+    <Folder Include="simMetrics\SimilarityClasses\edit distance\.svn\tmp\text-base\" />
+    <Folder Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\props\" />
+    <Folder Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\tmp\prop-base\" />
+    <Folder Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\tmp\props\" />
+    <Folder Include="simMetrics\SimilarityClasses\jaro and jaroWinkler\.svn\tmp\text-base\" />
+    <Folder Include="simMetrics\SimilarityClasses\length based\.svn\props\" />
+    <Folder Include="simMetrics\SimilarityClasses\length based\.svn\tmp\prop-base\" />
+    <Folder Include="simMetrics\SimilarityClasses\length based\.svn\tmp\props\" />
+    <Folder Include="simMetrics\SimilarityClasses\length based\.svn\tmp\text-base\" />
+    <Folder Include="simMetrics\SimilarityClasses\QGram\.svn\props\" />
+    <Folder Include="simMetrics\SimilarityClasses\QGram\.svn\tmp\prop-base\" />
+    <Folder Include="simMetrics\SimilarityClasses\QGram\.svn\tmp\props\" />
+    <Folder Include="simMetrics\SimilarityClasses\QGram\.svn\tmp\text-base\" />
+    <Folder Include="simMetrics\SimilarityClasses\token based\.svn\props\" />
+    <Folder Include="simMetrics\SimilarityClasses\token based\.svn\tmp\prop-base\" />
+    <Folder Include="simMetrics\SimilarityClasses\token based\.svn\tmp\props\" />
+    <Folder Include="simMetrics\SimilarityClasses\token based\.svn\tmp\text-base\" />
+    <Folder Include="simMetrics\UtilityClasses\.svn\prop-base\" />
+    <Folder Include="simMetrics\UtilityClasses\.svn\props\" />
+    <Folder Include="simMetrics\UtilityClasses\.svn\tmp\prop-base\" />
+    <Folder Include="simMetrics\UtilityClasses\.svn\tmp\props\" />
+    <Folder Include="simMetrics\UtilityClasses\.svn\tmp\text-base\" />
+    <Folder Include="simMetrics\UtilityClasses\costfunctions\.svn\props\" />
+    <Folder Include="simMetrics\UtilityClasses\costfunctions\.svn\tmp\prop-base\" />
+    <Folder Include="simMetrics\UtilityClasses\costfunctions\.svn\tmp\props\" />
+    <Folder Include="simMetrics\UtilityClasses\costfunctions\.svn\tmp\text-base\" />
+    <Folder Include="simMetrics\UtilityClasses\Tokenisers\.svn\props\" />
+    <Folder Include="simMetrics\UtilityClasses\Tokenisers\.svn\tmp\prop-base\" />
+    <Folder Include="simMetrics\UtilityClasses\Tokenisers\.svn\tmp\props\" />
+    <Folder Include="simMetrics\UtilityClasses\Tokenisers\.svn\tmp\text-base\" />
+    <Folder Include="simMetrics\UtilityClasses\Wordhandlers\.svn\prop-base\" />
+    <Folder Include="simMetrics\UtilityClasses\Wordhandlers\.svn\props\" />
+    <Folder Include="simMetrics\UtilityClasses\Wordhandlers\.svn\tmp\prop-base\" />
+    <Folder Include="simMetrics\UtilityClasses\Wordhandlers\.svn\tmp\props\" />
+    <Folder Include="simMetrics\UtilityClasses\Wordhandlers\.svn\tmp\text-base\" />
+    <Folder Include="Windows\Devices\Bluetooth\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

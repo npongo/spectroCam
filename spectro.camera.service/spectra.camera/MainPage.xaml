@@ -1,0 +1,229 @@
+﻿<Page
+    x:Class="spectra.camera.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:spectra.camera"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters ="using:spectra.camera.Converters"     
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:helper="using:spectra.camera.Helpers"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:windows="using:OxyPlot.Windows"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush }">
+    <Page.Resources>
+        <Style x:Key="ShellButton"
+         TargetType="ButtonBase">
+            <Setter Property="Background"
+           Value="Transparent" />
+            <!--<Setter Property="BorderBrush"
+           Value="{x:Null}" />-->
+            <Setter Property="BorderThickness"
+           Value="0" />
+            <Setter Property="Margin"
+           Value="0" />
+            <Setter Property="Width"
+           Value="{ThemeResource SplitViewCompactPaneThemeLength}" />
+            <Setter Property="Height"
+           Value="{ThemeResource SplitViewCompactPaneThemeLength}" />
+            <Setter Property="HorizontalAlignment"
+           Value="Left" />
+            <Setter Property="VerticalAlignment"
+           Value="Top" />
+        </Style>
+
+    </Page.Resources>
+    
+    <Grid HorizontalAlignment="Stretch">
+        <Grid Name="Main" Visibility="{Binding Path=ShowMainView}" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="HamburgerButton" Grid.Row="0" Grid.Column="0" 
+                    FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    FontSize="18" 
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Command="{Binding Path=OpenCloseMainMenuCommand}"
+                  IsEnabled="{Binding Path=EnableMainView}"
+             />
+            <CommandBar Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Grid.ColumnSpan="2">
+                <AppBarButton Icon="Save" Content="Save" Command="{Binding SaveCommand}">
+                    <i:Interaction.Behaviors>
+                        <helper:ButtonFocusBehavior/>
+                    </i:Interaction.Behaviors>
+                </AppBarButton>
+                <AppBarButton Icon="Delete" Content="Delete" Command="{Binding DeleteCommand, Mode=OneWay}">
+                    <i:Interaction.Behaviors>
+                        <helper:ButtonFocusBehavior/>
+                    </i:Interaction.Behaviors>
+                </AppBarButton>
+                <AppBarButton Icon="Add" Content="Add" Command="{Binding NewCommand, Mode=OneWay}">
+                    <i:Interaction.Behaviors>
+                        <helper:ButtonFocusBehavior/>
+                    </i:Interaction.Behaviors>
+                </AppBarButton>
+                <AppBarButton Icon="Previous" Content="Previous" Command="{Binding PreviousCommand, Mode=OneWay}">
+                    <i:Interaction.Behaviors>
+                        <helper:ButtonFocusBehavior/>
+                    </i:Interaction.Behaviors>
+                </AppBarButton>
+                <AppBarButton Icon="Next" Content="Next" Command="{Binding NextCommand, Mode=OneWay}">
+                    <i:Interaction.Behaviors>
+                        <helper:ButtonFocusBehavior/>
+                    </i:Interaction.Behaviors>
+                </AppBarButton>
+            </CommandBar>
+
+
+            <StackPanel HorizontalAlignment="Stretch"
+                           Grid.Column="1"
+                           Grid.Row="0" >
+                <ProgressBar IsIndeterminate="{Binding Path=TaskRunning}" Name="TaskProgress"/>
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=TaskMessage}" Style="{StaticResource CaptionTextBlockStyle}"/>
+            </StackPanel>
+            <SplitView Name="MainSplitView"
+               DisplayMode= "CompactOverlay"
+               CompactPaneLength="0" 
+               Grid.Row="1" 
+               HorizontalAlignment="Stretch"
+               HorizontalContentAlignment="Stretch"
+               IsEnabled="{Binding Path=EnableMainView}"
+               Grid.ColumnSpan="3"  
+               IsPaneOpen="{Binding Path=ShowMainMenu, Mode=TwoWay}">
+                <SplitView.Pane>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="MENU" Grid.Row="0" Style="{StaticResource TitleTextBlockStyle}"/>
+                        <ScrollViewer Grid.Row="1">
+                            <StackPanel HorizontalAlignment="Stretch" Grid.Row="1">
+
+                                <AppBarButton Style="{StaticResource ShellButton}"
+                                          Command="{Binding Path=ConnectCommand}"
+                                          Width="{Binding OpenPaneLength, ElementName=MainSplitView}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <SymbolIcon Symbol="Link" Margin="14,0" />
+                                        <TextBlock Text="Connect to SpectroCam" />
+                                    </StackPanel>
+                                </AppBarButton>
+
+                                <AppBarButton Style="{StaticResource ShellButton}"
+                                          Command="{Binding Path=SpectraVM.OpenDarkCurrentCalibrationCommand}"
+                                          Width="{Binding OpenPaneLength, ElementName=MainSplitView}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <SymbolIcon Symbol="Camera" Margin="14,0" />
+                                        <TextBlock Text="Dark Current Calibration" />
+                                    </StackPanel>
+                                </AppBarButton>
+
+
+                                <AppBarButton Style="{StaticResource ShellButton}"
+                                          Command="{Binding Path=ShowProjectManagerCommand}"
+                                          Width="{Binding OpenPaneLength, ElementName=MainSplitView}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <SymbolIcon Symbol="Globe" Margin="14,0"/>
+                                        <TextBlock Text="Manage Projects" />
+                                    </StackPanel>
+                                </AppBarButton>
+
+                                <AppBarButton Style="{StaticResource ShellButton}"
+                                          Command="{Binding Path=SetFilterCommand}"
+                                          Width="{Binding OpenPaneLength, ElementName=MainSplitView}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <SymbolIcon Symbol="Filter" Margin="14,0" />
+                                        <TextBlock Text="Set Filter" />
+                                    </StackPanel>
+                                </AppBarButton>
+
+
+                                <Border BorderBrush="Black" BorderThickness="1.5" Margin="0,10,0,20"/>
+
+
+                                <AppBarButton Style="{StaticResource ShellButton}"
+                                          Command="{Binding Path=DropboxDatabaseCommand}"
+                                          Width="{Binding OpenPaneLength, ElementName=MainSplitView}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/dropbox48x48.png" Margin="14,0"/>
+                                        <TextBlock Text="Export Data to Dropbox" />
+                                    </StackPanel>
+                                </AppBarButton>
+
+                                <AppBarButton Style="{StaticResource ShellButton}"
+                                          Command="{Binding Path=BackupDatabaseCommand}"
+                                          Width="{Binding OpenPaneLength, ElementName=MainSplitView}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/backup_48x48.png" Margin="14,0"/>
+                                        <TextBlock Text="Backup Data" />
+                                    </StackPanel>
+                                </AppBarButton>
+
+                                <AppBarButton Style="{StaticResource ShellButton}"
+                                          Command="{Binding Path=SyncDatabaseExecute}"
+                                          Width="{Binding OpenPaneLength, ElementName=MainSplitView}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/Cloud_Sync_48x48.png" Margin="14,0"/>
+                                        <TextBlock Text="Sync Data to Cloud" />
+                                    </StackPanel>
+                                </AppBarButton>
+                            </StackPanel>
+                        </ScrollViewer>
+
+                        <StackPanel x:Name="FooterPanel"
+                         Orientation="Horizontal"
+                         Grid.Row="2">
+                            <AppBarButton Icon="Setting"
+                                          Command="{Binding Path=SettingsOpenCommand}"
+                            Style="{StaticResource ShellButton}" />
+                            <AppBarButton Icon="Help"
+                                          Command="{Binding Path=AboutOpenCommand}"
+                            Style="{StaticResource ShellButton}" />
+                        </StackPanel>
+                    </Grid>
+                </SplitView.Pane>
+                <Grid HorizontalAlignment="Stretch" Name="Content">
+                        <!--<Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*" MinHeight="400"/>
+                            <RowDefinition Height="*" MinHeight="400"/>
+                            <RowDefinition Height="*" MinHeight="400"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>-->
+
+                        <ContentControl Name="ProjectManager" DataContext="{Binding ProjectMxVM}" ContentTemplate="{StaticResource ProjectManagementView}"
+                                        Visibility="{Binding ElementName=Content, Path=DataContext.ShowSpectrometer, Converter={StaticResource negativeBoolToVisiblityConverter}}"
+                                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+                        <ContentControl Name="SpectralCollator" DataContext="{Binding SpectraVM}" ContentTemplate="{StaticResource SpectraView}"
+                                        Visibility="{Binding ElementName=Content,  Path=DataContext.ShowSpectrometer, Converter={StaticResource boolToVisiblityConverter}}"
+                                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+
+                    </Grid>
+            </SplitView>
+        </Grid>
+        <Border BorderBrush="DarkGray" CornerRadius="10" BorderThickness="2"
+               Visibility="{Binding Path=ShowWaitDialog}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Background="Azure">
+            <StackPanel Name="WaitDialog" Visibility="{Binding Path=ShowWaitDialog}" >
+                <ProgressRing IsActive="True" Height="40" Margin="10,10,10,5"/>
+                <TextBlock Text="{Binding Path=WaitDialogMessage}" Margin="10,5,10,10"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
