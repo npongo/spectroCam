@@ -1,0 +1,2 @@
+# spectroCam
+smartphone spectrameter app
