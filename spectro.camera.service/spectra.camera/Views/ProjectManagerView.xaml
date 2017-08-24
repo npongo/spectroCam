@@ -86,7 +86,7 @@
             <CommandBar Grid.Row="4" Grid.ColumnSpan="2">
                 <AppBarButton Icon="Edit" Content="Edit Project" Command="{Binding ElementName=Projects, Path=DataContext.EditProjectCommand}" CommandParameter="{Binding}"/>
                 <AppBarButton Icon="Camera" Content="Collect Spectra"  Command="{Binding ElementName=Projects, Path=DataContext.StartSpectraCollection}" CommandParameter="{Binding}"/>
-                <AppBarButton Icon="ReShare" Content="Share"  Command="{Binding ElementName=Projects, Path=DataContext.ShareCommand}" CommandParameter="{Binding}"/>
+                <!--<AppBarButton Icon="ReShare" Content="Share"  Command="{Binding ElementName=Projects, Path=DataContext.ShareCommand}" CommandParameter="{Binding}"/>-->
             </CommandBar>
         </Grid>
     </DataTemplate>
